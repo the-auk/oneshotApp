@@ -1,6 +1,6 @@
 const OPENAI = require('openai');
 
-const apiKey = '';
+const apiKey = process.env.APOLLO_APIKEY;
 const openai = new OPENAI({ apiKey: apiKey });
 
 const getFilters = async (userMessage) => {

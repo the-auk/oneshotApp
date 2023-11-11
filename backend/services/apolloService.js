@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const apolloBaseUrl = 'https://api.apollo.io/api/v1/mixed_companies/search';
-const apolloAPIKEY = '';
+const apolloAPIKEY = process.env.APOLLO_APIKEY;
 const getCompaniesList = async (filters) => {
     const headers = {
         'Cache-Control': 'no-cache',
