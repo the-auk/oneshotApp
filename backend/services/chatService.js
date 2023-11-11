@@ -1,6 +1,7 @@
 const OPENAI = require('openai');
 
 const apiKey = process.env.CHATGPT_APIKEY;
+console.log(apiKey)
 const openai = new OPENAI({ apiKey: apiKey });
 
 const getFilters = async (userMessage) => {
