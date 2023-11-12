@@ -2,6 +2,7 @@ const chatService = require("../services/chatService")
 const apolloService = require("../services/apolloService")
 
 const getNewCompaniesList = async (req, res) => {
+    console.log("GOT REQUEST")
     const { userMessage } = req.body;
     const filters = await chatService.getFilters(userMessage);
     if(filters!=null){
