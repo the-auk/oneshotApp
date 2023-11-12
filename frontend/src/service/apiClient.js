@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiBasePath = 'https://oneshot-404901.uc.r.appspot.com'
+const apiBasePath = 'https://oneshot-404901.uc.r.appspot.com/api'
 
 export const getNewCompaniesList = async (userMessage) => {
     try {
