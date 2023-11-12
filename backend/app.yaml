@@ -1,0 +1,7 @@
+runtime: nodejs14
+
+env_variables:
+  NODE_ENV: production
+  PORT: 8080
+  APOLLO_APIKEY: RHw7ItGMe2yU1Ps0IuTbHA
+  CHATGPT_APIKEY: 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
