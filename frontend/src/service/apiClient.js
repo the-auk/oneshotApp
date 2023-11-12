@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiBasePath = 'https://ec2-18-117-96-59.us-east-2.compute.amazonaws.com/'
+const apiBasePath = 'https://ec2-18-117-96-59.us-east-2.compute.amazonaws.com:8080'
 
 export const getNewCompaniesList = async (userMessage) => {
     try {
