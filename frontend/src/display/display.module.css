@@ -9,6 +9,28 @@
     overflow-y: scroll;
     position: relative;
     height: 100vh;
+    overflow-x: scroll;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 16px;
+    position: sticky;
+    background-color: #e6e6e6;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #218AFF;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 99;
+}
+.headerItem{
+    display: flex;
+    padding-left: 10px;
+    box-sizing: border-box;
+    align-items: center;
 }
 .paginationFooter{
     display: flex;
@@ -17,14 +39,46 @@
     position: sticky;
     position: -webkit-sticky;
     left: 0;
-    bottom: 0px;
+    bottom: 10px;
     width: 100%;
     z-index: 99;
-    min-height: 50px;
+    box-sizing: border-box;
+    padding: 10px 16px;
     background-color: #e6e6e6;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.emptyState{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+}
+.loadingState{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+}
+.currentPage{
+    max-width: 50px;
+    border: none;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 0px 5px ;
+    background-color: transparent;
+    text-align: center;
+    outline: none;
+    font-weight: 600;
+    color: #218AFF;
+    font-size: 14px;
 }
 .companyItem{
-    width: 100%;
+    width: auto;
     height: 100px;
     background-color: #fff;
     color: black;
@@ -37,19 +91,68 @@
     flex-shrink: 0;
     position: relative;
     z-index: 1;
+    font-size: 14px;
+    overflow: hidden;
+    transition: all ease 0.35s;
+    cursor: pointer;
+}
+.companyItem:hover{
+    background-color: #e6e6e65c;
 }
 .companyName{
     display: flex;
     align-items: center;
-    width: 150px;
+    width: 200px;
     height: 100%;
     border-right: 1px solid #e6e6e6;
+    flex-shrink: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+.companyDetails{
+    display: flex;
+    flex-direction: row;
+}
+.companyEmployees{
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.companyLocation{
+    display: flex;
+    align-items: center;
+    width: 170px;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.companyIndustry{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.companyKeywords{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: calc(100vw - 1070px);
 }
 .textOverflow{
     overflow: hidden;
     white-space: nowrap;
     text-wrap: nowrap;
     text-overflow: ellipsis;
-    width: 100%;
     display: block;
 }

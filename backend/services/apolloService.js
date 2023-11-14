@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const apolloBaseUrl = 'https://api.apollo.io/api/v1/mixed_companies/search';
-const apolloAPIKEY = process.env.APOLLO_APIKEY;
+const apolloAPIKEY = process.env.APOLLO_APIKEY || '';
 
 const getCompaniesList = async (filters) => {
     const headers = {
@@ -32,9 +32,18 @@ const getCompaniesList = async (filters) => {
     else{
         companiesList=response.data.accounts.concat(response.data.organizations)
     }
+    let companyDataUrls=[]
+    companiesList.forEach(element => {
+        companyDataUrls.push(element.website_url)
+    });
+    const result = await axios.post('https://api.apollo.io/api/v1/organizations/bulk_enrich', {
+        api_key:apolloAPIKEY,
+        domains:companyDataUrls
+    })
+    console.log(result.data)
     return {
         filters: filters,
-        'accounts': companiesList, 
+        'accounts': result.data.organizations, 
         'pagination': { 'totalPages': response.data.pagination.total_pages, 'currentPage': response.data.pagination.page }
     }
 }

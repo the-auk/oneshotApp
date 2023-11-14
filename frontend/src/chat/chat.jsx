@@ -5,7 +5,7 @@ import styles from "./chat.module.css";
 import { PaperPlaneRight } from '@phosphor-icons/react'
 
 export default function Chat(props) {
-    const [messageList, setMessageList] = useState([])
+    const [messageList, setMessageList] = useState([{ 'role': 'system', 'text': 'You can ask me stuff like "Get me companies based in Hawaii with less than 500 employees that do Construction"'}])
     const [userInput, setUserInput] = useState('')
     const [loading, setLoading] = useState(false);
 
@@ -14,6 +14,7 @@ export default function Chat(props) {
     }
     const handleDataFetch = async (e) => {
         e.preventDefault();
+        props.passLoadingStateUp()
         if (!loading) {
             setMessageList((prev) => {
                 return [...prev, { 'role': 'user', 'text': userInput }]
@@ -30,7 +31,7 @@ export default function Chat(props) {
             }
             else{
                 setMessageList((prev) => {
-                    return [...prev, { 'role': 'system', 'text': `${result.data}` }]
+                    return [...prev, { 'role': 'system', 'text': `Please try again with a different input` }]
                 })
             }
             setLoading(false)
@@ -45,7 +46,7 @@ export default function Chat(props) {
                 })}
             </div>
             <form action='' className={styles.inputWrapper}>
-                <input className={styles.inputBox} onChange={handleUserInput} value={userInput} />
+                <input placeholder="Ask me about companies" className={styles.inputBox} onChange={handleUserInput} value={userInput} />
                 <button className={styles.submitButton} onClick={handleDataFetch}>
                     <PaperPlaneRight size={20} />
                     </button>

@@ -10,6 +10,7 @@
     padding-left: 10px;
     box-sizing: border-box;
     border-left: 1px solid #e6e6e6;
+    flex-shrink: 0;
 }
 .messageList{
     display: flex;
@@ -32,6 +33,7 @@
     border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
+    padding-left: 10px;
 }
 .submitButton{
     height: 50px;
@@ -52,6 +54,7 @@
     width: 100%;
 }
 .message{
+    max-width: 80%;
     display: flex;
     padding: 10px;
     border-radius: 4px;

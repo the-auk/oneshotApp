@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiBasePath = 'https://oneshot-404901.uc.r.appspot.com/'
+const apiBasePath = 'http://localhost:8080/api'
 
 export const getNewCompaniesList = async (userMessage) => {
     try {
@@ -9,7 +9,7 @@ export const getNewCompaniesList = async (userMessage) => {
         })
         return list
     } catch (err) {
-        throw err;
+        return err.response.status
     }
 }
 
